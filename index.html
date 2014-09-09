@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>CSS</h1>
+					<h3>Cascading Style Sheets</h3>
+					<p>
+						<small>Created by <a href="#">Steven McDaniel</a> / <a href="http://twitter.com/devappended">@devappended</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>History</h2>
+					<p>
+						Web sites began to spring up everywhere. There were personal journals, university sites, corporate sites, and more. As number of sites increased, so did the demand for new HTML tags that would allow one effect or another. Authors started demanding that they be able to make text boldfaced, or italicized.
+					</p>
+					<br/>
+					<p>
+						As a result of these pressures, markup elements like bold and italic started to creep into the language. Suddenly, a structural language started to become presentational.
+					</p>
+					<img src="http://media.tumblr.com/tumblr_mbwjmmAGhg1ql0bnm.gif">
+
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>What's Wrong with This?</h2>
+						<ul>
+							<li>Unstructured pages make content indexing inordinately difficult for SEO.</li>
+							<li>A lack of structure reduces accessibility. Imagine that you are blind, and rely on a speech-synthesis browser to browse the Web.</li>
+							<li>Structured markup is easier to maintain.</li>
+						</ul>
+					
+					</section>
+					<section>
+						<p>
+							However, no style sheet solution was immediately available for use with HTML. Something had to be done to correct this problem.
+						</p>
+					</section>
+					<section>
+						<h2>CSS to the Rescue</h2>
+						<p>In 1996 the W3C (World Wide Web Consortium) made a full recommendation of CSS with the same weight as HTML.</p>
+						<p>
+							CSS allows for much richer document appearances than HTML ever allowed, even at the height of its presentational fever. CSS contains the ability to set colors on text and in the background of any element; it permits the creation of borders around any element, as well as the increase or decrease of the space around them; it allows authors to change the way text is capitalized, decorated (e.g., underlining), its spacing, and even whether or not it is displayed at all; and many other effects.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Where Does CSS Go</h2>
+					<ul>
+						<li>External</li>
+						<li>Internal [Cascades Above External]</li>
+						<li>Inline [Cascades Above Both]</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cascade of CSS</h2>
+					<img src="http://www.encoders.co.in/blog/wp-content/uploads/2010/03/cascade.jpg">
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## External
+
+						```
+						<html>
+						  <head>
+						  	<title>My Website</title>
+
+						  	<style type="text/css" href="path/basic.css"></style>
+						  <head>
+						  <body>
+						  	<h1>My amazing title</h1>
+
+						  	<p>
+						  		Text goes here...
+						  	</p>
+						  </body>
+						</html>
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Internal
+
+						```
+						<html>
+						  <head>
+						  	<title>My Website</title>
+
+						  	<style type="text/css">
+							  	body {
+							  		background-color: blue;
+							  	}
+						  	</style>
+						  <head>
+						  <body>
+						  	<h1>My amazing title</h1>
+
+						  	<p>
+						  		Text goes here...
+						  	</p>
+						  </body>
+						</html>
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Inline
+
+						```
+						<html>
+						  <head>
+						  	<title>My Website</title>
+						  <head>
+						  <body style="background-color: blue;">
+						  	<h1>My amazing title</h1>
+
+						  	<p>
+						  		Text goes here...
+						  	</p>
+						  </body>
+						</html>
+						```
+					</script>
+				</section>
+
+
+
+				<section>
+					<h2>Anatomy of a CSS Rule</h2>
+					<img src="http://learnwebcode.com/wp-content/uploads/2010/02/anatomy-of-a-css-rule.gif">
+					<img src="http://bricksofweb.com/wp-content/uploads/2013/03/css_anatomy.png">
+				</section>
+
+
+				<section>
+					<h2>Box Model</h2>
+					<img src="http://www.w3schools.com/css/box-model.gif">
+					<header>What?</header>
+					<small>Show Me!</small>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Selectors
+
+						Hey you, yeah you, I want you to be blue!
+
+						```
+						<section data-markdown>
+						#element
+						  h1 {
+						  	color: red;
+						  }
+						#ID
+						  #mcdaniel {
+						  	color: white;
+						  }
+						#class selector
+						  .steven {
+						  	color: blue;
+						  }
+						</section>
+						```
+						Selectors are used to identify what you want to style.
+					</script>
+				</section>
+				<section>
+					<h2>Specificity</h2>
+					<img src="http://dotnetslackers.com/Community/blogs/xun/blog/Oct2011/css_specificity.png">
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Specificity
+
+						What Color is "My amazing title"?
+
+						```
+						<html>
+						  <head>
+						  	<title>My Website</title>
+						  	<style type="text/css">
+									  h1 { color: red;
+									  #mcdaniel { color: white; }
+										.steven { color: blue; }
+						  	</style>
+						  <head>
+						  <body>
+						  	<h1 id="mcdaniel" class="steven">My amazing title</h1>
+
+						  	<p class="steven">
+						  		Text goes here...
+						  	</p>
+						  </body>
+						</html>
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Grouping Selectors
+
+						```
+						h1, h2, p {
+						    text-align: center;
+						    color: red;
+						}
+						```
+					</script>
+				</section>
+
+				<section>
+					<section data-background="#007777">
+						<h2>Advanced Topics</h2>
+						<p>
+							We've come a long way... but there is SO much more!
+						</p>
+						<img src="http://fc05.deviantart.net/fs71/f/2012/320/e/2/lay_the_dancing_unicorn_by_jongsuu-d5l5s7b.gif">
+					</section>
+					<section data-background="https://33.media.tumblr.com/f50e9fd50776820937215d90de50b7c4/tumblr_mgo41t1J7K1qgawlzo1_500.gif">
+						<h2>Splash Zone!</h2>
+						<p>You just got soaked with knowledge son!</p>
+						<br/>
+					</section>
+					<section data-background="http://media.giphy.com/media/SYrMAmJZT4YcU/giphy.gif" data-background-repeat="repeat" data-background-size="100px">
+						<h2>THIS IS EXCITING!!!!!</h2>
+					</section>
+				</section>
+
+				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+					<h2>Deep Dive</h2>
+					<ul>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/roundedcorners/">Rounded Corners</a>: Corners. That are rounded.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/shadows/">Shadows</a>: Adding “pop” to boxes and text.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/selectors/">Universal, Child, and Adjacent Selectors</a>: More precise aim with clever selectors.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/colors/">Advanced Colors</a>: Alpha <em>transparency</em> and <em>HSL</em>.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/atrules/">At-Rules</a>: Importing style sheets, styles for different <em>media types</em>, specifying the character set of a stylesheet and <em>embedded fonts</em>.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/attributeselectors/">Attribute Selectors</a>: Targeting boxes by their elements’ HTML attributes.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/transitions/">CSS Transitions</a>: Creating smooth animations.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/backgrounds/">Backgrounds: Multiples, Size, and Origin</a></li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/transformations/">Transformations</a>: Molding the size and shape of a box and its contents.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/gradients/">Gradients</a>: Linear and radial gradients without image files.</li>
+						<li><a href="http://www.htmldog.com/guides/css/advanced/mediaqueries/">Media Queries</a>: Optimizing pages for different devices and screen sizes.</li>
+						<li><a href="http://www.cssbasics.com/introduction-to-css/">CSS Basics Resource</a></li>
+					</ul>
+				</section>
+
+				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+					<h2>QUESTIONS?!?</h2>
+					<img src="http://i.imgur.com/Lnh4j7o.gif">
+				</section>
+
+				<section>
+					<h2>Clever Quote</h2>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;If you're already a front-end developer, well, pretend you're also wearing a pirate hat.&rdquo;
+					</blockquote>
+					<p>
+						― Ethan Marcotte, Responsive Web Design
+					</p>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<img src="http://www.best-gif.com/wp-content/uploads/2014/02/funny-gifs-Worst-end-of-a-Mario-World-ever.gif">
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
